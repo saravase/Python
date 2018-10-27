@@ -1,0 +1,2 @@
+import Module
+Module.call()
