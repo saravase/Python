@@ -1,0 +1,11 @@
+setup.py
+src/write_read/__init__.py
+src/write_read/__main__.py
+src/write_read/file_read.py
+src/write_read/file_write.py
+src/write_read.egg-info/PKG-INFO
+src/write_read.egg-info/SOURCES.txt
+src/write_read.egg-info/dependency_links.txt
+src/write_read.egg-info/top_level.txt
+src/write_read/util/__init__.py
+src/write_read/util/file_handler.py

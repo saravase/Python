@@ -1,0 +1,46 @@
+
+Create Zip file
+
+	-	cmd : python -m zipfile -c ../write_read.zip *
+
+
+Execute Zip file:
+
+	-	cmd : python write_read.zip hello.txt
+
+Create Setup File :
+
+	import setuptools
+
+	setuptools.setup(
+		name = 'write_read',
+		version = '1.0.0',
+		description = 'Handling file read and write',
+		packages = setuptools.find_packages('src'),
+		package_dir = {'': 'src'}
+		)
+
+Make tar.gz file
+
+	-	cmd : python setup.py sdist
+
+Run tar.gz file
+
+	-	cmd : pip install libname
+
+
+Install Wheel
+
+	-	cmd : pip install wheel
+
+Make a wheel file:
+
+	-	cmd : python setup.py bdist_wheel
+
+Upload lib to Pypi:
+
+	-	Create pypi account
+	-	install twine
+			-	pip install twine
+	-	upload wheel
+			-	twine upload dist/write_read-1.0.0-py3-none-any.whl
