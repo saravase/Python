@@ -1,0 +1,10 @@
+Import formats:
+	->	import module_name	- module.method
+	->	from module import method 
+	-> 	from module impoet method as mn
+	->	from module import (method1,...methodn)
+
+
+Sys Arguments:
+	-> 	python file.py args....
+

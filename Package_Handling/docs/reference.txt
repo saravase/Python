@@ -3,7 +3,6 @@ Create Zip file
 
 	-	cmd : python -m zipfile -c ../write_read.zip *
 
-
 Execute Zip file:
 
 	-	cmd : python write_read.zip hello.txt

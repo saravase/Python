@@ -1,0 +1,154 @@
+PIP:  python package manager
+
+Best Practice:
+	=> Install the packages inside the virtual environments. It is a good way of install packages.
+
+PIP Commands:
+
+	=> Install:
+		=> pip install package_name . . .
+
+	=> List [return installed packages]
+		=> pip list
+
+	=> Uninstall:
+		=> pip uninstall package_name . . .
+
+	=> help:
+	  	=> pip help
+
+	=> show:
+	 	=> pip show package_name
+
+Getting Help:
+	
+	=> built-in Help 	: pip help 
+	=> specific Commands: pip help install
+	=> visit			: http://pip-installer.org
+	=> cheese shop		: https://pypi.org
+
+Example:
+	=>	cmd: pip show tensorboard
+
+		Name: tensorboard
+		Version: 1.13.1
+		Summary: TensorBoard lets you watch Tensors Flow
+		Home-page: https://github.com/tensorflow/	tensorboard
+		Author: Google Inc.
+		Author-email: opensource@google.com
+		License: Apache 2.0
+		Location: c:\users\saravanakumar\appdata\local\programs\python\python37\lib\site-packages
+		Requires: protobuf, numpy, six, werkzeug, absl-py, wheel, grpcio, markdown
+		Required-by: tensorflow-gpu
+
+
+Best way to install packages:
+	=> cmd : python2 -m  pip install package_name
+
+Virtual ENV:
+	=> Why we go for VENV:
+		- 	multiple project with conflicting  defendencies
+		-	confilict with system dependencies
+		-	Multi user system
+		-	Testing code different python and library versions
+
+Create a virtual environment:
+	-	cmd : python -m pip install virtualenv
+	- 	check version
+			-	virtualenv --version
+	-	Move to particular directory. Where do you want a virtual environment
+	-	cmd : vitualenv environment_name
+	-  	create python3 virtual env:
+		-	cmd : virtualenv -p python3 environment_name
+
+Working with ENV:
+	-	activate ENV:  
+		-	i) cmd : environemnt_name\scripts\activate	
+		-	ii) cmd: environment_name\Scripts\activate.bat
+	-	check python and pip version:
+		-	cmd : python -V
+		- 	cmd : pip -V
+	-	check installed libraries:
+		-	cmd : python -m pip list
+	-	deacivate ENV:
+		-	cmd : deactivate
+
+ Some other way to creating a virtual environment:
+ 	-	cmd : virtualenv environment_name
+ 	-	cmd : python -m venv environment_name [ py3]
+ 	-	cmd : pyvenv environment_name [ depricated]
+ 
+PIP freeze:
+
+	-	freeze command used to get the installed library with version in the form of [library_name==version]
+
+	-	generate the requirement.txt
+		-	cmd: python -m pip freeze > requirements.txt
+
+	-	install library using requirements
+		-	cmd : python -m pip install -r requirements.txt
+
+	- modify requirements
+		-  	numpy == 1.2.1      [exact 1.2.1]
+		- 	pandas >= 2.2.1     [minimum 2.2.1]
+		-	matplotlib != 1.1.1 [except 1.1.1]
+
+Versions and pip:
+	-	cmd : python -m pip install numpy==1.1.1
+
+	- 	cmd : python -m pip install 'Django<2.0' any version before 2.0
+
+	-	update library
+		-	cmd : python -m pip install -U flask
+
+	- 	update pip:
+		-	cmd : python -m pip install -U pip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flask Form Handling</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css')}}">
+</head>
+<body>
+	<div class="container">
+		<div class="img-container">
+			<img src="{{ url_for('static', filename='img/person.jpg') }}" alt="Person">
+		</div>
+		<div class="form-container">
+			<form method="POST" action="/login" id="loginform">
+				{{ form.username() }}
+				{{ form.password() }}
+				{{ form.submit() }}
+			</form>
+		</div>
+	</div>
+</body>
+</html>

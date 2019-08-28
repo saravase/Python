@@ -1,0 +1,148 @@
+Install SQLAlchemy:
+	-	cmd : pip install SQLAlchemy
+
+Install mysql-connector-python:
+	-	cmd : pip install mysql-connector-python
+	
+Database Connector:
+	-	SQLite
+		-	pysqlite(sqlite3)
+	-	PostgreSQL
+		-	psycopg2
+	-	MySQL
+		-	MySQL Connector Python
+	-	Oracle
+		-	cx_Oracle
+	-	MS SQL Server
+		-	PyODBC
+Database Connection String:
+	-	dialect[+driver]://user:password@hostname/dbname
+		-	dialect - system to communicate with DBAPI 
+		-	driver  - optional
+SQLite:
+	-	('sqlite:///importing_sqlite.db')
+
+MySQL:
+	-	('mysql+mysqlconnector://root:mysql@localhost:3306/importing_mysql')
+
+Postgresql:
+	-	('postgresql://xavier:postgres@localhost:5432/importing_postgres')
+
+Create and Connect Table:
+
+import sqlalchemy as db
+from sqlalchemy import Column, Integer, String, Sequence
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
+session = sessionmaker()
+engine = db.create_engine('mysql+mysqlconnector://root@localhost:3306/sqlalchemy_mysql')
+con = engine.connect()
+session.configure(bind = engine)
+my_session = session()
+Base = declarative_base()
+
+class User(Base):
+	__tablename__ = 'users'
+	id = Column(Integer, Sequence('user_id_seq'),primary_key = True)
+	name = Column(String(100))
+	fullname = Column(String(100))
+	nickname = Column(String(100))
+	
+	def __repr__(self):
+		return "< fullname : '%s' nickname : '%s'>"%(self.fullname, self.nickname)
+
+Base.metadata.create_all(engine)
+
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
+
+class Address(Base):
+	__tablename__ = 'addresses'
+	id = Column(Integer, Sequence('add_id_seq'), primary_key = True)
+	email_address = Column(String(100) , nullable = False)
+	user_id = Column(Integer, ForeignKey('users.id'))
+	user = relationship("User", back_populates = 'addresses')
+
+	def __repr__(self):
+		return "<email_address : '%s'>"%(self.email_address)
+
+User.addresses = relationship("Address", order_by = Address.id , back_populates = "user")
+
+Base.metadata.create_all(engine)
+
+
+
+
+Commands:
+
+# create Table
+	-	Base.metadata.create_all(engine)
+
+# insert data
+	-	my_session.add(table_object)
+
+# multiple data insert
+	-	my_session.add_all([table_object])
+
+# select all:
+	-	my_session.query(table).all()
+
+# filter:
+	-	my_session.query(table.attr1, table.attr2).filter(table.attr == '').all()
+
+# in/ not in  :
+	-	my_session.query(table.attr1, table.attr2).filter(table.attr.in_(['as','fg'])).all()
+
+	-	my_session.query(table.attr1, table.attr2).filter(~table.attr.in_(['as','fg'])).all()
+
+# filter_by:
+	-	my_session.query(table).filter_by(attr = 'as').all()
+
+# like / ilike(case insensitive):
+	-	my_session.query(table).filter(table.attr.like('%f%')).all()
+
+# equals / no equals:
+	-	my_session.query(table).filter(table.attr != 'f').all()
+
+# is null / is not null:
+	-	my_session.query(table).filter(table.attr.is_(None)).all()
+	-	my_session.query(table).filter(table.attr.isnot(None)).all()
+
+# and, or:
+	-	query.filter(and_(table.attr == 'ed', table.attr == 'Ed Jones'))
+
+# match:
+	-	query.filter(table.attr.match('Ed Jones'))
+
+Return List functions:
+	-	my_ses.query(table).all()
+	-	my_ses.query(table).one()
+	-	my_ses.query(table).first()
+	-	my_ses.query(table).scalar()
+
+Return List count:
+	-	my_session.query(Poster).filter(Poster.name.like('%t%')).count()
+
+Textual query:
+	-	my_session.query(Poster).filter(text("name ='water'")).all()
+
+Params Passing:
+	-	my_session.query(Poster).from_statement(text('select * from poster where name=:name')).params(name='water').all()
+
+Group_by:
+	-	my_session.query(Poster).group_by(Poster.description).all()
+
+Join:
+	-	my_session.query(User).join(Address).filter(Address.email_address == 'ranjani@gmailcom').all()
+
+
+
+
+
+
+
+
+
+
+

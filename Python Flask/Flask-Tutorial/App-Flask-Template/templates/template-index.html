@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flask-Template</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	{% set data= [1,2,3,4,5] %}
+	{% set employee= {'name': 'optimus prime', 'age' : 34, 'salary': 34900.00} %}
+	{% for val in data %}
+		{% if val%2 == 0 %}
+			<p>{{ val }} - 2</p>
+		{% elif val%3 == 0 %}
+			<p>{{ val }} - 3</p>
+			<p>{{ val }} - 33</p>
+		{% else %}
+			<p> {{ val}} - other</p>
+		{% endif %}
+	{% endfor %}
+
+	{% for key,val in employee.items() %}
+		{% if key == 'age' %}
+			<p>{{ 'Age is 34' if employee[key] else 'Age is not 34'}}</p>
+		{% else %}
+			<p>{{key}} - {{ val }}</p>
+		{% endif %}
+	{% endfor %}
+	{% if 10 == 10 and 20 == 20 %}
+		<p> {{ 'Hai optimus, and working fine'}}</p>
+	{% endif %}
+	{% if 10 == 10 or 20 == 40 %}
+		<p> {{ 'Hai optimus, or working fine'}}</p>
+	{% endif %}
+	{% if not False %}
+		<p> {{ 'Hai optimus, not working fine'}}</p>
+	{% endif %}
+	{% if 10 in [1,2,3,2,3,4,2,10] %}
+		<p> {{ 'Hai optimus, in working fine'}}</p>
+	{% endif %}
+	{% for data in [1,2,2,3,2,3,11,3,12,3] %}
+		<p>{{loop.length}} - {{ data}}</p>
+	{% endfor %}
+	{% set names = ['optimus', 'prime', '<p>saravana</p>', 'satheesh']%}
+	{% for val in names %}
+		<p> {{ val|safe }}</p>
+	{% endfor %}
+
+	{% set html = "<p>Escaping in Jinja</p>" %}
+	{{ html|safe }}
+
+	{% macro display(post) %}
+		<ul>
+			{% for val in post %}
+				<li>{{val}}</li>
+			{% endfor %}
+		</ul>
+		<ul>{{varargs}}</ul>
+		<ul>{{kwargs}}</ul>
+	{% endmacro %}
+	{{ display(names,1,2,3,5,name= 'optimus', age=34)}}
+	{% include 'additional/nav.html'%}
+	{% extends 'additional/nav.html'%}
+	{% block content %}
+	{{ super()}}
+	<h1>Hi optimus, this template block</h1>
+	{% endblock %}
+</body>
+</html>

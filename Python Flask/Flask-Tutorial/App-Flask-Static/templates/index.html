@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flask</title>
+	<link rel="stylesheet" href="{{url_for('static', filename = 'css/index.css')}}">
+</head>
+<body>
+	<div id = "container" onclick="display()">
+		<h1 id = "heading">Flask Static Concept</h1>
+		<p id = "content">Hi i am optimus prime. I am Learning flask static concept. Flask is very simple framework. Easy understandable and rememberable.</p>
+	</div>
+<script src ="{{ url_for('static', filename = 'js/index.js')}}"></script>
+</body>
+</html>

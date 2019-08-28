@@ -1,0 +1,143 @@
+Name                          :
+Register Number:              :
+1. What is the capitals of Arkansas
+A. Baton Rouge
+B. Little Rock
+C. Boston
+D. Santa Fe
+
+2. What is the capitals of Rhode Island
+A. Providence
+B. Tallahassee
+C. Raleigh
+D. Richmond
+
+3. What is the capitals of Oregon
+A. Springfield
+B. Sacramento
+C. Austin
+D. Salem
+
+4. What is the capitals of Nebraska
+A. Lincoln
+B. Raleigh
+C. Jefferson City
+D. Dover
+
+5. What is the capitals of Massachusetts
+A. Frankfort
+B. Boston
+C. Des Moines
+D. Harrisburg
+
+6. What is the capitals of Pennsylvania
+A. Austin
+B. Harrisburg
+C. Charleston
+D. Jefferson City
+
+7. What is the capitals of Colorado
+A. Denver
+B. Salt Lake City
+C. Concord
+D. Nashville
+
+8. What is the capitals of Alabama
+A. Santa Fe
+B. Montgomery
+C. Frankfort
+D. Jackson
+
+9. What is the capitals of Minnesota
+A. Salt Lake City
+B. Atlanta
+C. Saint Paul
+D. Juneau
+
+10. What is the capitals of Alaska
+A. Juneau
+B. Phoenix
+C. Olympia
+D. Nashville
+
+11. What is the capitals of Mississippi
+A. Jefferson City
+B. Jackson
+C. Atlanta
+D. Trenton
+
+12. What is the capitals of South Carolina
+A. Topeka
+B. Hartford
+C. Baton Rouge
+D. Columbia
+
+13. What is the capitals of Michigan
+A. Boise
+B. Topeka
+C. Lansing
+D. Salt Lake City
+
+14. What is the capitals of North Carolina
+A. Tallahassee
+B. Raleigh
+C. Springfield
+D. Helena
+
+15. What is the capitals of Maryland
+A. Annapolis
+B. Oklahoma City
+C. Honolulu
+D. Columbus
+
+16. What is the capitals of Illinois
+A. Jefferson City
+B. Springfield
+C. Baton Rouge
+D. Honolulu
+
+17. What is the capitals of Tennessee
+A. Richmond
+B. Pierre
+C. Nashville
+D. Oklahoma City
+
+18. What is the capitals of Ohio
+A. Topeka
+B. Columbus
+C. Santa Fe
+D. Dover
+
+19. What is the capitals of Kentucky
+A. Concord
+B. Olympia
+C. Frankfort
+D. Trenton
+
+20. What is the capitals of Idaho
+A. Austin
+B. Pierre
+C. Tallahassee
+D. Boise
+
+Answer key                    
+1 : B
+2 : A
+3 : D
+4 : A
+5 : B
+6 : B
+7 : A
+8 : B
+9 : C
+10 : A
+11 : B
+12 : D
+13 : C
+14 : B
+15 : A
+16 : B
+17 : C
+18 : B
+19 : C
+20 : D

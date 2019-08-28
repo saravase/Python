@@ -1,0 +1,74 @@
+.container{
+	position: absolute;
+    width: 400px;
+    height: 600px;
+    left: 50%;
+    margin-left: -200px;
+    top: 50%;
+    margin-top: -300px;
+    border: 2px groove #2196F3;
+    background-color: #03A9F4;
+}
+
+.img-container{
+	position: absolute;
+    width: 175px;
+    height: 175px;
+    left: 50%;
+    margin-left: -87px;
+    top: 10%;
+}
+
+img{
+	width: 175px;
+    height: 175px;
+    border-radius: 50%;
+}
+
+.form-container{
+	position: absolute;
+    width: 300px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+}
+
+input{
+	position: absolute;
+    margin: 0px;
+    width: 300px;
+    height: 40px;
+    font-size: 1em;
+    left: 50%;
+    margin-left: -152px;
+    border: 3px groove #03A9F4;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#username{
+	position: absolute;
+    top: 0px;
+}
+
+#password{
+	position: absolute;
+    top: 65px;
+}
+
+#submit{
+	position: absolute;
+    top: 130px;
+    left: 50%;
+    margin-left: -150px;
+    color: #fff;
+    background-color: #03A9F4;
+    font-size: 1.3em;
+}
+
+
+#submit:hover{
+    color: #fff;
+    background-color: #2196F3;
+}

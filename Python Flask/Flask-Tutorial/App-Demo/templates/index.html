@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>App-Demo</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css' ) }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/bootstrap.min.css')}}">
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<div class="card-body">
+				<div class="table-editable">
+					<table id="emp-table" class="table table-responsive-md table-striped text-center">
+						<thead class="table-primary">
+							<tr>
+								<td>Emp No</td>
+								<td>First Name</td>
+								<td>Last Name</td>
+								<td>Age</td>
+								<td>Salary</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Optimus</td>
+								<td>Prime</td>
+								<td>23</td>
+								<td>23000</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Saravana</td>
+								<td>Kumar</td>
+								<td>43</td>
+								<td>25000</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Kani</td>
+								<td>Mozhi</td>
+								<td>32</td>
+								<td>54000</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Satheesh</td>
+								<td>Kumar</td>
+								<td>21</td>
+								<td>78000</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Pandi</td>
+								<td>Selvi</td>
+								<td>65</td>
+								<td>232000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>		
+			</div>
+		</div>
+	</div>
+	<input type="button" name="detail" id="detail" value="detail">
+	<div id="detail-index"></div>
+	<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

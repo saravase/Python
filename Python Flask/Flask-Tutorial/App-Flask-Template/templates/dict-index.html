@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Dict Template</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1> {{emp.display()}}</h1>
+	<table cellpadding = "10" cellspacing = "10">
+		<tr>
+			<td>Employee Name</td>
+			<td>{{emp.__class__.__base__}}</td>
+		</tr>
+		<tr>
+			<td>Employee Age</td>
+			<td>{{ employee['age']}}</td>
+		</tr>
+		<tr>
+			<td>Employeee Salary</td>
+			<td>{{ employee['salary']}}</td>
+		</tr>
+	</table>
+</body>
+</html>
