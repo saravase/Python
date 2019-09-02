@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Simple Sidebar - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="mdb.min.css" rel="stylesheet">
+  <link href="font-awesome.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="table.css" rel="stylesheet">
+  <link rel="stylesheet" href="bootstrap-select.min.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="solid.css">
+  <link rel="stylesheet" href="brands.css">
+</head>
+<body>
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Start Bootstrap </div>
+      <div class="list-group list-group-flush">
+        <div class="row"><h5 class="text-center" style="color: #fff" for="">Current</h5></div>
+        <div class="row">
+          <select class="selectpicker"  multiple data-header="Select Current" data-selected-text-format="count > 1" title="Choose Current..." id="current-table" data-live-search="true" data-size="5">
+            <option value="function">function</option>
+            <option value="ptf">ptf</option>
+            <option value="d2b">d2b</option>
+          </select>
+        </div>
+        <div class="row"><h5 class="text-center" style="color: #fff" for="">Future</h5></div>
+        <div class="row">
+          <select class="selectpicker" multiple data-header="Select Future" data-selected-text-format="count > 1" title="Choose Future..." id="future-table" data-live-search="true" data-size="5">
+            <option value="function">function</option>
+            <option value="ptf">ptf</option>
+            <option value="d2b">d2b</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn " id="menu-toggle">Toggle Menu</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid content">
+        <div class="content-wrapper">
+          <section id="header-container">
+            <div class="row mb-4">
+              <div class="col-xl-12">
+                <div class="card h-auto " id="header-card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-xl-2"></div>
+                      <div class="col-xl-8">
+                        <h1 class="text-center">Weekly status report - 2018</h1>
+                      </div>
+                      <div class="col-xl-2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="table-container ">
+            <section id="attendance-function-current-container" style="display: none">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="table-responsive">
+                    <table id="attendance-function-current" class="table table-bordered table-striped text-center" >
+                      <thead class="table-info">
+                        <tr>
+                          <td>Period</td>
+                          <td>New</td>
+                          <td>Inprogress</td>
+                          <td>Stopped</td>
+                          <td>Pause</td>
+                          <td>developed</td>
+                          <td>development</td>
+                          <td>ch</td>
+                          <td>close</td>
+                          <td>total</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td >Current</td>
+                          <td contenteditable="true"></td>
+                          <td contenteditable="true"></td>
+                          <td contenteditable="true"></td>
+                          <td contenteditable="true"></td>
+                          <td contenteditable="true"></td>
+                          <td contenteditable="true"></td>
+                          <td contenteditable="true"></td>
+                          <td contenteditable="true"></td>
+                          <td contenteditable="true"></td>
+                        </tr>
+                        <tr>
+                          <td>Last Week</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#basicExampleModal">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                          </td>
+                          <td class="demo-container" colspan="9">
+                            <textarea id="area-cmd" name="command" id="" cols="10" rows="3" class="form-control" ></textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Modal -->
+          <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Command</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-xl-12"><input type="text" id="add-cmd" class="form-control"></div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="add-btn">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section id="attendance-d2b-current-container"  style="display: none">
+          <div class="row mt-4">
+            <div class="col-xl-12">
+              <div class="table-responsive">
+                <table id="attendance-d2b-current" class="table  table-bordered table-striped text-center" >
+                  <thead class="table-info">
+                    <tr>
+                      <td>Period</td>
+                      <td>New</td>
+                      <td>Inprogress</td>
+                      <td>Stopped</td>
+                      <td>Pause</td>
+                      <td>developed</td>
+                      <td>development</td>
+                      <td>ch</td>
+                      <td>close</td>
+                      <td>total</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td >Current</td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                      <td>Last Week</td>
+                      <td>2</td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>5</td>
+                      <td>6</td>
+                      <td>7</td>
+                      <td>8</td>
+                      <td>9</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="attendance-ptf-current-container"  style="display: none">
+          <div class="row mt-4">
+            <div class="col-xl-12">
+              <div class="table-responsive">
+                <table id="attendance-ptf-current" class="table  table-bordered table-striped text-center" >
+                  <thead class="table-info">
+                    <tr>
+                      <td>Period</td>
+                      <td>New</td>
+                      <td>Inprogress</td>
+                      <td>Stopped</td>
+                      <td>Pause</td>
+                      <td>developed</td>
+                      <td>development</td>
+                      <td>ch</td>
+                      <td>close</td>
+                      <td>total</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td >Current</td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                      <td>Last Week</td>
+                      <td>2</td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>5</td>
+                      <td>6</td>
+                      <td>7</td>
+                      <td>8</td>
+                      <td>9</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="attendance-function-future-container" style="display: none">
+          <div class="row mt-4">
+            <div class="col-xl-12">
+              <div class="table-responsive">
+                <table id="attendance-function-future" class="table  table-bordered table-striped text-center" >
+                  <thead class="table-success">
+                    <tr>
+                      <td>Period</td>
+                      <td>New</td>
+                      <td>Inprogress</td>
+                      <td>Stopped</td>
+                      <td>Pause</td>
+                      <td>developed</td>
+                      <td>development</td>
+                      <td>ch</td>
+                      <td>close</td>
+                      <td>total</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td >Current</td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                      <td>Last Week</td>
+                      <td>2</td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>5</td>
+                      <td>6</td>
+                      <td>7</td>
+                      <td>8</td>
+                      <td>9</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="attendance-d2b-future-container" style="display: none">
+          <div class="row mt-4">
+            <div class="col-xl-12">
+              <div class="table-responsive">
+                <table id="attendance-d2b-future" class="table table-default table-bordered table-striped text-center" >
+                  <thead class="table-success">
+                    <tr>
+                      <td>Period</td>
+                      <td>New</td>
+                      <td>Inprogress</td>
+                      <td>Stopped</td>
+                      <td>Pause</td>
+                      <td>developed</td>
+                      <td>development</td>
+                      <td>ch</td>
+                      <td>close</td>
+                      <td>total</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td >Current</td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                      <td>Last Week</td>
+                      <td>2</td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>5</td>
+                      <td>6</td>
+                      <td>7</td>
+                      <td>8</td>
+                      <td>9</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="attendance-ptf-future-container" style="display: none">
+          <div class="row mt-4">
+            <div class="col-xl-12">
+              <div class="table-responsive">
+                <table id="attendance-ptf-future" class="table table-default table-bordered table-striped text-center" >
+                  <thead class="table-success">
+                    <tr>
+                      <td>Period</td>
+                      <td>New</td>
+                      <td>Inprogress</td>
+                      <td>Stopped</td>
+                      <td>Pause</td>
+                      <td>developed</td>
+                      <td>development</td>
+                      <td>ch</td>
+                      <td>close</td>
+                      <td>total</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td >Current</td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                      <td>Last Week</td>
+                      <td>2</td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>5</td>
+                      <td>6</td>
+                      <td>7</td>
+                      <td>8</td>
+                      <td>9</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /#page-content-wrapper -->
+
+</div>
+
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="jquery.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.bundle.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="mdb.min.js"></script>
+<script src="bootstrap-select.min.js"></script>
+<script src="table.js"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+
+</script>
+
+</body>
+
+</html>

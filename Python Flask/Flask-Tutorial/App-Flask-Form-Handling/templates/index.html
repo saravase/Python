@@ -12,11 +12,19 @@
 			<img src="{{ url_for('static', filename='img/person.jpg') }}" alt="Person">
 		</div>
 		<div class="form-container">
-			<form method="POST" action="/login" id="loginform">
+			<form method="POST" action="{{ url_for('index') }}" id="loginform" novalidate>
 				{{ form.username() }}
+				<ul>
+					{% for error in form.username.errors %}
+						<li style="color:red;">{{ error }}</li>
+					{% endfor %}
+				</ul>
 				{{ form.password() }}
 				{{ form.submit() }}
 			</form>
+		</div>
+		<div class="error-container">
+
 		</div>
 	</div>
 </body>
