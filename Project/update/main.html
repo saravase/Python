@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="font-awesome.min.css">
   <link rel="stylesheet" href="solid.css">
   <link rel="stylesheet" href="brands.css">
+  <link rel="stylesheet" href="toastr.min.css">
 
 </head>
 
@@ -288,6 +289,7 @@
 <script src="bootstrap.bundle.min.js"></script>
 <script src="bootstrap.min.js"></script>
 <script src="mdb.min.js"></script>
+<script src="toastr.min.js"></script>
 
 <script src="main.js"></script>
 
@@ -297,6 +299,7 @@
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
   });
+toastr.success('We do have the Kapua suite available.', 'Turtle Bay Resort', {timeOut: 5000})
 </script>
 
 </body>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_script import Manager
 from werkzeug.datastructures import MultiDict
 
@@ -12,13 +12,20 @@ manager = Manager(app)
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-	form = LoginForm(MultiDict([('username', 'sara@gmail.com'), ('password', 'Optimus')]))
+	form = LoginForm()
 	if form.validate_on_submit():
 		username = request.form['username']
 		password = request.form['password']
+		print(username)
+		print(password)
 		msg = 'Login Successfully'
-		return msg
+		flash('Login Successfully', 'success')
+		return redirect(url_for('home'))
 	return render_template('index.html', form=form)
+
+@app.route('/home')
+def home():
+	return 'Home Page'
 
 @app.route('/login', methods = ['POST'])
 def login():

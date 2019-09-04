@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css')}}">
 </head>
 <body>
+	{% for category, message in get_flashed_messages(with_categories=true) %}
+	<p class="{{ category }}">{{ message }}</p>
+	{% endfor %}
 	<div class="container">
 		<div class="img-container">
 			<img src="{{ url_for('static', filename='img/person.jpg') }}" alt="Person">
@@ -16,10 +19,15 @@
 				{{ form.username() }}
 				<ul>
 					{% for error in form.username.errors %}
-						<li style="color:red;">{{ error }}</li>
+					<li style="color:red;">{{ error }}</li>
 					{% endfor %}
 				</ul>
 				{{ form.password() }}
+				<ul>
+					{% for error in form.password.errors %}
+					<li style="color:red;">{{ error }}</li>
+					{% endfor %}
+				</ul>
 				{{ form.submit() }}
 			</form>
 		</div>
