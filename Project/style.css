@@ -8,7 +8,7 @@ body {
   height: 100%;
   font-family: "Roboto", sans-serif;
   overflow: hidden;
-  background-image: linear-gradient(#eecda3, #ef629f);
+  background-color: aqua-gradient !important
 }
 
 .table1 {

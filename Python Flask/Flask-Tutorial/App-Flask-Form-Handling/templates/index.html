@@ -5,35 +5,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Flask Form Handling</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css')}}">
+	<style>
+		.error{
+			color: red;
+			font-weight: bold;
+		}
+	</style>
 </head>
 <body>
-	{% for category, message in get_flashed_messages(with_categories=true) %}
-	<p class="{{ category }}">{{ message }}</p>
-	{% endfor %}
-	<div class="container">
-		<div class="img-container">
-			<img src="{{ url_for('static', filename='img/person.jpg') }}" alt="Person">
-		</div>
+	<form method="POST" action="{{ url_for('index') }}" id="loginform" novalidate>
 		<div class="form-container">
-			<form method="POST" action="{{ url_for('index') }}" id="loginform" novalidate>
-				{{ form.username() }}
-				<ul>
-					{% for error in form.username.errors %}
-					<li style="color:red;">{{ error }}</li>
-					{% endfor %}
-				</ul>
-				{{ form.password() }}
-				<ul>
-					{% for error in form.password.errors %}
-					<li style="color:red;">{{ error }}</li>
-					{% endfor %}
-				</ul>
-				{{ form.submit() }}
-			</form>
+			{% for field in form if field.name != 'csrf_token' %}
+				{{ field.label() }}
+				{{ field() }}
+				{% for error in field.errors %}
+					<div class="error">{{ error }}</div>
+				{% endfor %}
+			{% endfor %}
 		</div>
-		<div class="error-container">
-
-		</div>
-	</div>
+	</form>
 </body>
 </html>
