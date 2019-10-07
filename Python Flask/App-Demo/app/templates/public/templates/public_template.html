@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{% block title %}Welcom Public{% endblock %}</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/saralogo.jpg')}}" />
+	<!-- Import the boostrap style sheet-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<!-- Import the custom style-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- Import jquery script-->
+  <script src="{{ url_for('static', filename='js/jquery.js')}}"></script>
+  <!-- Import Bootstrap script-->
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+  <!-- Import custom script-->
+  <script src="{{ url_for('static', filename='js/app.js')}}"></script>
+</head>
+<body>
+	<!-- nav bar content -->
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+  <a class="navbar-brand" href="#">Flask</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/guest">Guest Book</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/upload">Upload</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/table">Table</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/dashboard">Admin</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
+<!-- nav bar end -->
+	{% block main %}{% endblock %}
+	{% block script %}{% endblock %}
+</body>
+</html>

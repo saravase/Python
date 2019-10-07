@@ -1,0 +1,32 @@
+{% extends 'admin/templates/admin_template.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block main %}
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>Admin Profile</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-4">
+			<div class="card">
+				<div class="card-header bg-info text-center " style="color:white;">
+					<h4>{{user['name']}}</h4>
+				</div>
+				<div class="card-body text-center">
+					<div class="card-text">
+						<h5>{{user['age']}}</h5>
+						<h5>{{user['position']}}</h5>
+						<h5>{{user['Salary']}}</h5>
+					</div>
+				</div>
+				<div class="card-footer">
+					<p class="text-center">Welcome</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock%}

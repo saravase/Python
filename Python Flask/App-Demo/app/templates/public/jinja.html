@@ -1,0 +1,69 @@
+{% extends 'public/templates/public_template.html' %}
+{% from 'macros/input_macros.html' import input as i %}
+{% from 'macros/input_macros.html' import button as b %}
+
+{% block title %}Jinja{% endblock %}
+
+{% block main %}
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>Jinja</h1>
+			<p>Hello {{ name }}</p>
+			<h4>Looping</h4>
+			<hr>
+			<strong class="d-block mb-3"> Programming Languages</strong>
+			<ul>
+				{% for lang in langs %}
+				<li>{{ loop.index }} - {{ lang }}</li>
+				{% endfor %}
+			</ul>
+			<h4>Looping Key/Value pair</h4>
+			<hr>
+			<strong class="d-block mb-3">Friends Details</strong>
+			<ul>
+				{% for name, age in friends.items() %}
+				<li>{{ name }} - {{ age }}</li>
+				{% endfor %}
+			</ul>
+			<h4>Calling Functions</h4>
+			<hr>
+			<p>{{ displayFullName('optimus', 'prime')}}</p>
+			<h4>Access List Value</h4>
+			<hr>
+			<p>{{ langs[0] }}</p>
+			<h4>Access Dict Value</h4>
+			<hr>
+			<p>{{ friends['optimus'] }}</p>
+			<h4>Access Class Value</h4>
+			<hr>
+			<p>{{ remote.msg }}</p>
+			<h4>Create Class Instance</h4>
+			<hr>
+			{% set slack_remote = SlackRemote('saravanakumar' , '$.S.kumar323', 'Hi, This is optimus prime') %}
+			<p>{{ slack_remote.username }}</p>
+			<p>{{slack_remote.msg }}</p>
+			<h4>Conditionals</h4>
+			<hr>
+			{% if slack_remote.username == 'saravanakuma r' %}
+				<p>{{ slack_remote.username }}</p>
+			{% elif remote.username == 'saravanakumar' %}
+				<p>{{ remote.username }}</p>
+			{% else %}
+				<p>Invalid username</p>
+			{% endif %}
+			<h4>Join Filter</h4>
+			<hr>
+			<p>{{ langs|join(',') }}</p>
+			<h4>Custome Date Filter</h4>
+			<hr>
+			<p>{{ date|clean_date }}</p>
+			<form action="">
+				{{ i(label='Name',name='name', type='text',placeholder='Enter Name', id='name') }}
+				{{ i(label='Password',name='password', type='password',placeholder='Enter Password', id='password')}}
+				{{ b(value='submit', id='submit', class='btn btn-primary', name='submit')}}
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

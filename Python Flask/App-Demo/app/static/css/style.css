@@ -1,0 +1,18 @@
+body{
+	background-image: linear-gradient(90deg, #4ee65a, #ffc72a8a);
+}
+
+.img-container{
+	width: auto;
+	height: 110px;
+}
+
+.logo{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left: 50%;
+	margin-left: -50px;
+	padding: 5px;
+	border-radius: 50%;
+}

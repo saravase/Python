@@ -1,0 +1,60 @@
+{% extends 'public/templates/public_template.html' %}
+{% block title %}
+Table
+{% endblock %}
+{% block main %}
+<div class="container-fluid">
+<section class="table-container">
+	<div class="row">
+	<div class="col-xl-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="table-responsive">
+                  <table id="attendance-function-future" class="table  table-bordered table-striped text-center" >
+				<thead class="bg-info">
+					<tr>
+						<td>Head1</td>
+						<td>Head2</td>
+						<td>Head3</td>
+						<td>Head4</td>
+						<td>Head5</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Data1</td>
+						<td>Data2</td>
+						<td>Data3</td>
+						<td>Data4</td>
+						<td>Data5</td>
+					</tr>
+					<tr>
+						<td>Data1</td>
+						<td>Data2</td>
+						<td>Data3</td>
+						<td>Data4</td>
+						<td>Data5</td>
+					</tr>
+					<tr>
+						<td colspan="5"><textarea name="" id="" cols="30" rows="2" class="form-control"></textarea></td>
+					</tr>
+					<tr>
+						<td colspan="5">
+							<div class="row">
+								<input type="text" id="link-title" placeholder="Link-Title" class="form-control col-xl-5"><input type="text" id="link-content" placeholder="Link-Content" class="form-control col-xl-5"><input type="button" value="add" id="add" class="btn btn-secondary col-xl-1">			
+							</div>
+					</td>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+		<div class="card-footer">
+	
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+{% endblock %}

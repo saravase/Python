@@ -1,0 +1,12 @@
+{% macro input(label='', type='', name='', placeholder ='', id='', class='') -%}
+	<div class="form-group">
+		<label for="">{{label}}</label>
+		<input type="{{type}}" class="form-control {{class}}" name="{{name}}" placeholder="{{placeholder}}" id="{{id}}">
+	</div>
+{%- endmacro %}
+
+{% macro button(value='',name='',  id='', class='') -%}
+	<div class="form-group text-center">
+		<input type="submit" class="form-control {{class}}" name="{{name}}" value="{{ value }}" id="{{id}}">
+	</div>
+{%- endmacro %}

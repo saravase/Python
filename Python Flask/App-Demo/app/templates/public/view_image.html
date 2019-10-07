@@ -1,0 +1,35 @@
+{% extends 'public/templates/public_template.html' %}
+
+{% block title %}
+View image
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col">
+
+          <picture>
+            <!-- thumbnail -->
+            <source class="img-fluid" srcset="/static/img/upload/{{dir}}/{{img}}-thumbnail.jpg" media="(max-width: 150px)">
+              <img class="img-fluid" src="/static/img/upload/{{dir}}/{{img}}-thumbnail.jpg" />
+            <!-- small -->
+            <source class="img-fluid" srcset="/static/img/upload/{{dir}}/{{img}}-540.jpg" media="(max-width: 540px)">
+              <img class="img-fluid" src="/static/img/upload/{{dir}}/{{img}}-540.jpg" />
+            <!-- medium -->
+            <source class="img-fluid" srcset="/static/img/upload/{{dir}}/{{img}}-768.jpg" media="(max-width: 768px)">
+              <img class="img-fluid" src="/static/img/upload/{{dir}}/{{img}}-768.jpg"/>
+            <!-- large -->
+            <source class="img-fluid" srcset="/static/img/upload/{{dir}}/{{img}}-1080.jpg" media="(max-width: 1080px)">
+              <img class="img-fluid" src="/static/img/upload/{{dir}}/{{img}}-1080.jpg"/>
+            <!-- xl -->
+            <source class="img-fluid" srcset="/static/img/upload/{{dir}}/{{img}}-1200.jpg" media="(max-width: 1200px)">
+              <img class="img-fluid" src="/static/img/upload/{{dir}}/{{img}}-1200.jpg"/>
+            <!-- original -->
+            <img class="img-fluid" src="/static/img/upload/{{dir}}/{{img}}.jpg" />
+          </picture>
+
+        </div>
+      </div>
+    </div>
+{% endblock %}
