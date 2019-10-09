@@ -11,18 +11,23 @@ def index():
 
 @app.route('/login')
 def login():
+	app.logger.info('login method start')
 	expire_date = datetime.datetime.utcnow() + datetime.timedelta(seconds=100)
 	token = jwt.encode({'exp': expire_date}, app.config['SECRET_KEY'], algorithm='HS256')
+	app.logger.info('login method end')
 	return token
 
 # GET
 @app.route('/get-tech')
 def get_tech():
+	app.logger.info('get_tech method start')
 	token = request.args['token']
 	try:
 		jwt.decode(token, app.config['SECRET_KEY'])
 	except:
+		app.logger.info('get_tech method end')
 		return jsonify({'error' : 'Please use proper token'})
+	app.logger.info('get_tech method end')
 	return jsonify({'technology': Tech.get_all_tech()})
 
 @app.route('/get-tech/<int:rank>')
