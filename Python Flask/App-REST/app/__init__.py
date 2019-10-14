@@ -1,8 +1,10 @@
 from flask import Flask
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 ROOT_PATH = os.path.join(os.path.dirname(__file__), '..')
 ENV_PATH = os.path.join(ROOT_PATH, '.env')
 load_dotenv(ENV_PATH)

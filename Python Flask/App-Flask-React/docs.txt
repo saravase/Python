@@ -1,0 +1,10 @@
+Commands:
+
+virtualenv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+npm install -g yarn
+yarn global add create-react-app react-scripts
+create-react-app react-frontend
+cd react-frontend
+npm run eject

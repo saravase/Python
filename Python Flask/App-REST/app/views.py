@@ -20,6 +20,7 @@ def login():
 # GET
 @app.route('/get-tech')
 def get_tech():
+	"""
 	app.logger.info('get_tech method start')
 	token = request.args['token']
 	try:
@@ -28,6 +29,7 @@ def get_tech():
 		app.logger.info('get_tech method end')
 		return jsonify({'error' : 'Please use proper token'})
 	app.logger.info('get_tech method end')
+	"""
 	return jsonify({'technology': Tech.get_all_tech()})
 
 @app.route('/get-tech/<int:rank>')
