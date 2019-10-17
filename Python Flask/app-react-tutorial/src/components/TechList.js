@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 function TechList(props){
 	return (
@@ -18,7 +20,7 @@ function TechList(props){
                                     <tbody>
                                     {props.tech.map(t => {
                                         return <tr key={t.rank}>
-                                            <td>{t.name}</td>
+                                            <td><Link to={"/technology/"+t.rank}>{t.name}</Link></td>
                                             <td>{t.nod}</td>
                                             <td>{t.rank}</td>
                                         </tr>
@@ -33,4 +35,11 @@ function TechList(props){
         )
 }
 
+TechList.propTypes = {
+	tech : PropTypes.arrayOf(PropTypes.shape({
+		name : PropTypes.string.isRequired,
+		nod : PropTypes.number.isRequired,
+		rank : PropTypes.number.isRequired
+	})).isRequired
+};
 export default TechList;
