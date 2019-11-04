@@ -50,21 +50,34 @@ def convert_valid_object(tech_object):
 	'rank' : tech_object['rank']
 	}
 
+def validate_object_empty(tech_object):
+	return tech_object['name'] == '' or tech_object['nod'] == 0 or tech_object['rank'] == 0
+
 @app.route('/add-tech', methods=['POST'])
 def add_tech():
 	request_data = request.get_json()
-	if(valid_tech_object(request_data)):
+	if(validate_object_empty(request_data)):
+		emptyDict = {}
+		if(request_data['name'] == ''):
+			emptyDict['name'] ='Name Required'
+		if(request_data['nod'] == 0):
+			emptyDict['nod'] ='No of Developer Required'
+		if(request_data['rank'] == 0)	:
+			emptyDict['rank'] ='Rank Required'
+		response = Response(json.dumps(emptyDict), status=400, mimetype='application/json')
+		return response
+	elif(valid_tech_object(request_data)):
 		Tech.add_tech(request_data['name'], request_data['nod'], request_data['rank'])
 		response = Response('', status=201, mimetype='application/json')
 		response.headers['Location'] = '/get-tech/'+str(request_data['rank'])
-		return response
+		return jsonify(Tech.get_tech_by_rank(request_data['rank']))
 	else:
 		error_object_msg = {
 			'error': 'Invalid tech object is passed in request',
 			'help': 'Sample tech data : {"name":"AI", "nod":23000, "rank":1}'
 		}
 		response = Response(json.dumps(error_object_msg), status=400, mimetype='application/json')
-		return response
+		return jsonify({'result':error_object_msg})
 
 # PUT
 def valid_put_tech_object(tech_object):
@@ -76,17 +89,18 @@ def valid_put_tech_object(tech_object):
 @app.route('/replace-tech/<int:rank>', methods=['PUT'])
 def replace_tech(rank):
 	request_data = request.get_json()
+	print(request_data)
 	if(not valid_put_tech_object(request_data)):
 		error_object_msg = {
 			"error": "Invalid tech object is passed in request",
 			"help": "Sample tech data : {'name':'AI', 'nod':23000, 'rank':1}"
 		}
 		response = Response(json.dumps(error_object_msg), status=400, mimetype='application/json')
-		return response
+		return jsonify({'result': 'failed'})
 	else:
 		Tech.replace_tech(rank, request_data['name'], request_data['nod'])
 		response = Response('', status=204)
-		return response
+		return jsonify(Tech.get_tech_by_rank(rank))
 
 # PATCH
 @app.route('/update-tech/<int:rank>', methods=['PATCH'])
@@ -105,9 +119,9 @@ def update_tech(rank):
 def delete_tech(rank):
 	if(Tech.delete_tech(rank)):
 		response = Response('', status=204)
-		return response
+		return jsonify({})
 	delete_error_msg = {
 	'error' : 'This requested rank is not available.So, Please give proper rank.',
 	}
 	response = Response(json.dumps(delete_error_msg), status=404, mimetype='application/json')
-	return response
+	return jsonify({})

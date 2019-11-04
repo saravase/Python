@@ -1,15 +1,22 @@
 import React, {useState, useEffect} from 'react';
-import { getTech } from '../api/TechApi';
 import TechList from './TechList';
-
+import TechStore from '../stores/techStore';
+import {loadTech, deleteTech} from '../actions/techActions';
+import {Link} from 'react-router-dom';
 
 function TechPage(){
 
-	const [tech, setTech] = useState([]);
+	const [tech, setTech] = useState(TechStore.getTech());
 
 	useEffect(()=> {
-		getTech().then(_tech=> setTech(_tech['technology']));
+		TechStore.addChangeListener(onChange);
+		if(TechStore.getTech().length === 0) loadTech();
+		return ()=> TechStore.removeChangeListener(onChange);
 	}, [])
+
+	function onChange(){
+		setTech(TechStore.getTech());
+	}
 
 	return(
 			<>
@@ -17,7 +24,8 @@ function TechPage(){
                 <h1>Technology</h1>
                 <p>Hey Prime this is Technology page</p>
             </div>
-            <TechList tech={tech} />
+            <div className="text-right"><Link to="/technology" exact className="btn btn-primary mb-1">New Tech</Link></div>
+            <TechList tech={tech}  deleteTech = {deleteTech}/>
             </>
 		)
 }

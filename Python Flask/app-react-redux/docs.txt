@@ -1,0 +1,12 @@
+Steps :
+	
+	=> Creating package.json file
+	=> run npm install command
+	=> create src folder
+	=> create index.js, index.html and favicon.ico
+	=> create webpack.config.dev.js
+	=> insert some new things in package.json file
+	=> add some npm scripts in package.json file
+	=> run command npm start
+
+

@@ -11,7 +11,7 @@ function Header(){
             {"|"}
             <NavLink to="/about" activeStyle={activeStyle} >About</NavLink>
             {"|"}
-            <NavLink to="/tech" activeStyle={activeStyle} >Technology</NavLink>
+            <NavLink to="/tech" activeStyle={activeStyle} >Tech</NavLink>
         </nav>
     )
 }

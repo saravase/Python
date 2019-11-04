@@ -44,12 +44,13 @@ class Tech(db.Model):
 		return bool(is_success)
 
 	def convert_json(self):
-		return {'name':self.name, 'nod':self.nod, 'rank':self.rank}
+		return {'name':self.name, 'nod':self.nod, 'rank':self.rank, 'id': self.id}
 
 	def __repr__(self):
 		tech_object = {
 		'name' : self.name,
 		'nod' : self.nod,
-		'rank' : self.rank
+		'rank' : self.rank,
+		'id': self.id
 		}
 		return json.dumps(tech_object)
