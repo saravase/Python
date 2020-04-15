@@ -1,0 +1,24 @@
+pipenv shell
+pipenv install django graphene-django dja
+ngo-graphql-jwt django-cors-headers
+pipenv install --dev autopep8
+
+# Create Project
+django-admin startproject app
+
+# Database Migrate
+python manage.py migrate
+
+# Runsever
+python manage.py runserver
+
+# Create new app
+python manage.py startapp tracks 
+
+# Create new model
+python manage.py makemigrations
+python manage.py migrate
+
+# Add data in tracks model
+from tracks.models import Track
+Track.objects.create(title="Track 1", description="Track 1 Description", url="https://www.tracks.com")
